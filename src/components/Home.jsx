@@ -15,7 +15,7 @@ const Home = () => {
     <div
     id="home"
       name="/"
-      className="w-full h-screen bg-gray-100 dark:bg-[#181a1b]  transition-colors duration-200"
+      className="w-full h-screen lg:bg-gray-100 lg:dark:bg-[#181a1b]  transition-colors duration-200"
     >
       {/* CONTAINER */}
       <motion.div

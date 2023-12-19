@@ -19,7 +19,7 @@ const About = () => {
     <div
       id="about"
       name="/about"
-      className="flex justify-center lg:items-center min-h-screen bg-gray-100 dark:bg-[#181a1b] text-[#444440] dark:text-gray-300 transition-colors duration-200 pt-5 md:pt-10 pb-10"
+      className="flex justify-center lg:items-center min-h-screen lg:bg-gray-100 lg:dark:bg-[#181a1b] text-[#444440] dark:text-gray-300 transition-colors duration-200 pt-5 md:pt-10 pb-10"
     >
       <motion.div
         initial={{ opacity: 0, translateX: -3 }}

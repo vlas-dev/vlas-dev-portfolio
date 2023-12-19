@@ -150,15 +150,15 @@ const Navbar = () => {
           </ScrollLink>
         </li>
         <button
-          className="ml-auto p-2 focus:outline-none  mt-2 md:mt-0 "
+          className="ml-auto lg:p-2 focus:outline-none  md:mt-0 "
           onClick={toggleDarkMode}
         >
           {darkMode ? (
-            <div className="flex items-center justify-center">
-              <IoIosSunny className="md:h-6 md:w-6 h-8 w-8 text-gray-300 hover:text-blue-500  hover:dark:text-[#fd204f] transition-colors duration-200" />
-            </div>
-          ) : (
-            <div className="flex items-center justify-center">
+                 <div className="flex items-center justify-center p-3 mt-2 lg:p-0 lg:mt-0">
+                 <IoIosSunny className="md:h-6 md:w-6 h-8 w-8 text-gray-300 hover:text-blue-500  hover:dark:text-[#fd204f] transition-colors duration-200" />
+               </div>
+             ) : (
+               <div className="flex items-center justify-center p-3 mt-2 lg:p-0 lg:mt-0">
               <IoIosMoon className="md:h-6 md:w-6 h-8 w-8 text-gray-500  hover:text-blue-500 hover:dark:text-[#fd204f] transition-colors duration-200" />
             </div>
           )}

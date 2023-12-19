@@ -51,19 +51,19 @@ function AnimatedRoutes() {
         <ResponsiveLayout />
       </div>
       <div className="hidden lg:block">
-        <div className="fixed left-16 z-10 flex items-center">
+        <div className="fixed left-4 z-10 flex items-center">
           <button 
             onClick={navigateToPrev}
-            className="text-gray-600 dark:text-gray-200 font-bold py-2 px-4 h-screen text-5xl"
+            className="text-gray-600 dark:text-gray-200 font-bold px-10 h-screen text-4xl transition duration-300 ease-in-out hover:bg-gray-200 hover:text-gray-800"
           >
             <GrPrevious />
           </button>
         </div>
 
-        <div className="fixed right-16 z-10 flex items-center">
+        <div className="fixed right-4 z-10 flex items-center">
           <button 
             onClick={navigateToNext}
-            className="text-gray-600 dark:text-gray-200 font-bold py-2 px-4 h-screen text-5xl"
+            className="text-gray-600 dark:text-gray-200 font-bold px-10 h-screen text-4xl transition duration-300 ease-in-out hover:bg-gray-200 hover:text-gray-800"
           >
             <GrNext />
           </button>
