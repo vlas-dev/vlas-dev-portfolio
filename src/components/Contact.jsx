@@ -30,8 +30,9 @@ const copyEmail = () => {
 const Contact = () => {
   return (
     <div
+    id="contact"
       name="/contact"
-      className="flex justify-center items-center pt-20 md:pt-0 md:h-screen w-full bg-gray-100 text-[#444440] dark:text-gray-300 dark:bg-[#181a1b] sm:pl-4 sm:pr-4 text-center  transition-colors duration-200"
+      className="flex justify-center lg:items-center pt-5 md:pt-10 lg:pt-0 md:h-screen w-full bg-gray-100 text-[#444440] dark:text-gray-300 dark:bg-[#181a1b] sm:pl-4 sm:pr-4 text-center  transition-colors duration-200"
     
 
     >
