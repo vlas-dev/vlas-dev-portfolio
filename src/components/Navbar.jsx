@@ -51,6 +51,32 @@ const Navbar = () => {
     setActiveSection(sectionURLs[path]); // Set the active section based on the current URL
   }, [location]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ["home", "about", "projects", "contact"];
+      let currentSection = "home";
+
+      for (let section of sections) {
+        const sectionEl = document.getElementById(section);
+        if (sectionEl) {
+          const bounds = sectionEl.getBoundingClientRect();
+          if (bounds.top <= 300 && bounds.bottom >= 300) {
+            currentSection = section;
+            break;
+          }
+        }
+      }
+
+      setActiveSection(currentSection);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <div className="fixed w-full h-[65px] bg-gray-100 dark:bg-[#151617] nav-index border-b-2 border-gray-200 dark:border-[#222425] transition-colors duration-200 ">
       <div className="max-w-[800px] mx-auto flex justify-between items-center">
@@ -63,6 +89,7 @@ const Navbar = () => {
             />{" "}
           </RouterLink>
         </div>
+
         <ul className="hidden lg:flex flex-grow justify-center text-gray-600 dark:text-gray-300 text-lg">
           <li>
             <RouterLink
@@ -137,11 +164,14 @@ const Navbar = () => {
             </RouterLink>
           </li>
         </ul>
+
+        {/* MD SCREENS BUTTONS */}
+
         <li className="ml-4 mt-2 mb-2 md:ml-2 md:mt-3 block lg:hidden">
-          <ScrollLink  to="home"
-            smooth={true}
-            offset={-70}
-            duration={500}>
+          <ScrollLink to="home"
+              smooth={true}
+              offset={-70}
+              duration={500}>
             <img
               src={darkMode ? LogoRed : LogoBlue}
               alt=""
@@ -149,23 +179,108 @@ const Navbar = () => {
             />
           </ScrollLink>
         </li>
+
+        <ul className="hidden md:flex lg:hidden flex-grow justify-center text-gray-600 dark:text-gray-300 text-lg">
+          <li>
+            <ScrollLink
+              to="home"
+              smooth={true}
+              offset={-70}
+              duration={500}
+              style={{ pointerEvents: isClickable ? "auto" : "none" }}
+            >
+              <span
+                className={`transition-colors duration-200 ${
+                  activeSection === "home"
+                    ? "text-blue-500 dark:text-[#fd204f]"
+                    : ""
+                }`}
+              >
+                <FaHome className="inline-block pb-1 mr-2" size={20} />
+                Home
+              </span>
+            </ScrollLink>
+          </li>
+          <li>
+            <ScrollLink
+              to="about"
+              smooth={true}
+              offset={-70}
+              duration={500}
+              style={{ pointerEvents: isClickable ? "auto" : "none" }}
+            >
+              <span
+                className={`transition-colors duration-200 ${
+                  activeSection === "about"
+                    ? "text-blue-500 dark:text-[#fd204f]"
+                    : ""
+                }`}
+              >
+                <FaUser className="inline-block pb-1 mr-2" size={20} />
+                About
+              </span>
+            </ScrollLink>
+          </li>
+          <li>
+            <ScrollLink
+              to="projects"
+              smooth={true}
+              offset={-70}
+              duration={500}
+              style={{ pointerEvents: isClickable ? "auto" : "none" }}
+            >
+              <span
+                className={`transition-colors duration-200 ${
+                  activeSection === "projects"
+                    ? "text-blue-500 dark:text-[#fd204f]"
+                    : ""
+                }`}
+              >
+                <FaBriefcase className="inline-block pb-1 mr-2" size={20} />
+                Projects
+              </span>
+            </ScrollLink>
+          </li>
+          <li>
+            <ScrollLink
+              to="contact"
+              smooth={true}
+              offset={-70}
+              duration={500}
+              style={{ pointerEvents: isClickable ? "auto" : "none" }}
+            >
+              <span
+                className={`transition-colors duration-200 ${
+                  activeSection === "contact"
+                    ? "text-blue-500 dark:text-[#fd204f]"
+                    : ""
+                }`}
+              >
+                <FaPhone className="inline-block pb-1 mr-2" size={20} />
+                Contact
+              </span>
+            </ScrollLink>
+          </li>
+        </ul>
+
+       
         <button
           className="ml-auto lg:p-2 focus:outline-none  md:mt-0 "
           onClick={toggleDarkMode}
         >
           {darkMode ? (
-                 <div className="flex items-center justify-center p-3 mt-2 lg:p-0 lg:mt-0">
-                 <IoIosSunny className="md:h-6 md:w-6 h-8 w-8 text-gray-300 hover:text-blue-500  hover:dark:text-[#fd204f] transition-colors duration-200" />
-               </div>
-             ) : (
-               <div className="flex items-center justify-center p-3 mt-2 lg:p-0 lg:mt-0">
-              <IoIosMoon className="md:h-6 md:w-6 h-8 w-8 text-gray-500  hover:text-blue-500 hover:dark:text-[#fd204f] transition-colors duration-200" />
+            <div className="flex items-center justify-center p-3 mt-2 md:p-0 md:mt-0 md:mr-10 lg:mr-0">
+              <IoIosSunny className="h-8 w-8 text-gray-300 hover:text-blue-500  hover:dark:text-[#fd204f] transition-colors duration-200" />
+            </div>
+          ) : (
+            <div className="flex items-center justify-center p-3 mt-2 md:p-0 md:mt-0 md:mr-10 lg:mr-0">
+              <IoIosMoon className="h-8 w-8 text-gray-500  hover:text-blue-500 hover:dark:text-[#fd204f] transition-colors duration-200" />
             </div>
           )}
         </button>
         <div
           onClick={() => setNav(!nav)}
-          className="hamburger-index lg:hidden mt-2 mr-4"
+          className="hamburger-index md:hidden mt-2 mr-4"
         >
           <Hamburger
             color={darkMode ? "rgb(209 213 219)" : "rgb(107 114 128)"}
@@ -198,7 +313,11 @@ const Navbar = () => {
             style={{ pointerEvents: isClickable ? "auto" : "none" }}
           >
             <span
-              className={`flex items-center transition-colors duration-200`}
+              className={`flex items-center transition-colors duration-200 ${
+                activeSection === "home"
+                  ? "text-blue-500 dark:text-[#fd204f]"
+                  : ""
+              }`}
             >
               <FaHome className="inline-block mr-2 pb-1" size={30} />
               Home
@@ -216,7 +335,11 @@ const Navbar = () => {
             style={{ pointerEvents: isClickable ? "auto" : "none" }}
           >
             <span
-              className={`flex items-center transition-colors duration-200`}
+              className={`flex items-center transition-colors duration-200 ${
+                activeSection === "about"
+                  ? "text-blue-500 dark:text-[#fd204f]"
+                  : ""
+              }`}
             >
               <FaUser className="inline-block mr-2 pb-1" size={30} />
               About
@@ -234,7 +357,11 @@ const Navbar = () => {
             style={{ pointerEvents: isClickable ? "auto" : "none" }}
           >
             <span
-              className={`flex items-center transition-colors duration-200`}
+              className={`flex items-center transition-colors duration-200 ${
+                activeSection === "projects"
+                  ? "text-blue-500 dark:text-[#fd204f]"
+                  : ""
+              }`}
             >
               <FaBriefcase className="inline-block mr-2 pb-1" size={30} />
               Projects
@@ -252,7 +379,11 @@ const Navbar = () => {
             style={{ pointerEvents: isClickable ? "auto" : "none" }}
           >
             <span
-              className={`flex items-center transition-colors duration-200`}
+              className={`flex items-center transition-colors duration-200 ${
+                activeSection === "contact"
+                  ? "text-blue-500 dark:text-[#fd204f]"
+                  : ""
+              }`}
             >
               <FaPhone className="inline-block mr-2 pb-1" size={30} />
               Contact
