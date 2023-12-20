@@ -55,7 +55,7 @@ function AnimatedRoutes() {
         <div className="fixed left-4 z-10 flex items-center">
           <button
             onClick={navigateToPrev}
-            className="text-gray-600 dark:text-gray-400 font-bold px-10 h-screen text-4xl transition duration-300 ease-in-out hover:bg-gray-200 hover:dark:bg-[#222426] hover:text-gray-100"
+            className="text-gray-400 dark:text-gray-400 font-bold px-10 h-screen text-4xl transition duration-300 ease-in-out hover:bg-gray-200 hover:dark:bg-[#222426] hover:text-gray-600 hover:dark:text-gray-100"
           >
             <GrPrevious />
           </button>
@@ -64,7 +64,7 @@ function AnimatedRoutes() {
         <div className="fixed right-4 z-10 flex items-center">
           <button
             onClick={navigateToNext}
-            className="text-gray-600 dark:text-gray-400 font-bold px-10 h-screen text-4xl transition duration-300 ease-in-out hover:bg-gray-200 hover:dark:bg-[#222426] hover:text-gray-100"
+            className="text-gray-400 dark:text-gray-400 font-bold px-10 h-screen text-4xl transition duration-300 ease-in-out hover:bg-gray-200 hover:dark:bg-[#222426] hover:text-gray-600 hover:dark:text-gray-100"
           >
             <GrNext />
           </button>
