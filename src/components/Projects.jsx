@@ -44,7 +44,7 @@ const Projects = () => {
     <div
     id="projects"
       name="/projects"
-      className="flex justify-center items-center pb-20 w-full lg:bg-gray-100 lg:dark:bg-[#1a1a1a] dark:text-gray-300 text-gray-700 md:pt-10 lg:pt-36 sm:pl-4 sm:pr-4 md:h-screen transition-colors duration-200"
+      className="flex justify-center items-center pb-20 w-full lg:bg-gray-100 lg:dark:bg-[#181a1b] dark:text-gray-300 text-gray-700 md:pt-10 lg:pt-36 sm:pl-4 sm:pr-4 md:h-screen transition-colors duration-200"
     >
       <motion.div
         className=" max-w-[500px] md:max-w-[800px]  mx-auto p-4"
