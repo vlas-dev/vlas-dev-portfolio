@@ -108,7 +108,7 @@ const Contact = () => {
             style={{ outline: "none" }}
             required
           ></textarea>
-          <button className="text-white  bg-blue-500 dark:bg-[#fd204f] hover:bg-blue-600 hover:dark:bg-[#da003f]  hover:border-gray-600   px-5 py-3  my-5 mx-auto flex items-center rounded transition-colors duration-200">
+          <button className="text-white  bg-blue-500 dark:bg-[#fd204f] hover:bg-blue-600 hover:dark:bg-[#da003f]  hover:border-gray-600   px-5 py-3  my-5 mx-auto flex items-center rounded-full transition-colors duration-200">
             Send
           </button>
         </form>

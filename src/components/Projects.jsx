@@ -85,7 +85,7 @@ const Projects = () => {
                     href={project.liveLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-blue-500 hover:bg-blue-600 dark:bg-[#fd204f] dark:hover:bg-[#da003f] text-white px-5 py-3 mr-2 rounded transition-colors duration-300 "
+                    className="bg-blue-500 hover:bg-blue-600 dark:bg-[#fd204f] dark:hover:bg-[#da003f] text-white px-5 py-3 mr-2 rounded-full transition-colors duration-300 "
                   >
                     Live
                   </a>
@@ -93,7 +93,7 @@ const Projects = () => {
                     href={project.codeLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-gray-800 hover:bg-gray-900 text-white px-5 py-3 rounded transition-colors duration-300 "
+                    className="bg-gray-800 hover:bg-gray-900 text-white px-5 py-3 rounded-full transition-colors duration-300 "
                   >
                     Code
                   </a>
