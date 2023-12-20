@@ -53,30 +53,47 @@ const Navbar = () => {
   }, [location]);
 
   useEffect(() => {
+    const updateActiveSection = (currentSection) => {
+      if (currentSection !== activeSection) {
+        setActiveSection(currentSection);
+      }
+    };
+
     const handleScroll = () => {
+      const isLargeScreen = window.innerWidth >= 1024; // Adjust this value based on your layout's breakpoint for large screens
+      if (isLargeScreen) {
+        // On large screens, set active section based on current route
+        const path = location.pathname;
+        const sectionURLs = { "/": "home", "/projects": "projects", "/about": "about", "/contact": "contact" };
+        updateActiveSection(sectionURLs[path] || "");
+        return;
+      }
+
       const sections = ["home", "projects", "about", "contact"];
-      let currentSection = "home";
 
       for (let section of sections) {
         const sectionEl = document.getElementById(section);
         if (sectionEl) {
           const bounds = sectionEl.getBoundingClientRect();
-          if (bounds.top <= 300 && bounds.bottom >= 300) {
-            currentSection = section;
-            break;
+          if (bounds.top <= window.innerHeight / 2 && bounds.bottom >= window.innerHeight / 2) {
+            updateActiveSection(section);
+            return;
           }
         }
       }
-
-      setActiveSection(currentSection);
     };
 
     window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleScroll); // Re-evaluate when the window is resized
+
+    // Initial check on mount
+    handleScroll();
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
     };
-  }, []);
+  }, [activeSection, location.pathname]);
 
   return (
     <div className="fixed w-full h-[65px] bg-gray-100 dark:bg-[#151617] nav-index border-b-2 border-gray-200 dark:border-[#222425] transition-colors duration-200 ">
