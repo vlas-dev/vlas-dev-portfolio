@@ -43,8 +43,9 @@ const Navbar = () => {
     // Map the section URLs to their corresponding IDs
     const sectionURLs = {
       "/": "home",
-      "/about": "about",
       "/projects": "projects",
+      "/about": "about",
+
       "/contact": "contact",
     };
 
@@ -53,7 +54,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["home", "about", "projects", "contact"];
+      const sections = ["home", "projects", "about", "contact"];
       let currentSection = "home";
 
       for (let section of sections) {
@@ -111,24 +112,6 @@ const Navbar = () => {
           </li>
           <li>
             <RouterLink
-              to="/about"
-              onClick={() => handleClick("about")}
-              style={{ pointerEvents: isClickable ? "auto" : "none" }}
-            >
-              <span
-                className={`transition-colors duration-200 ${
-                  activeSection === "about"
-                    ? "text-blue-500 dark:text-[#fd204f]"
-                    : ""
-                }`}
-              >
-                <FaUser className="inline-block pb-1 mr-2" size={20} />
-                About
-              </span>
-            </RouterLink>
-          </li>
-          <li>
-            <RouterLink
               to="/projects"
               onClick={() => handleClick("projects")}
               style={{ pointerEvents: isClickable ? "auto" : "none" }}
@@ -145,6 +128,25 @@ const Navbar = () => {
               </span>
             </RouterLink>
           </li>
+          <li>
+            <RouterLink
+              to="/about"
+              onClick={() => handleClick("about")}
+              style={{ pointerEvents: isClickable ? "auto" : "none" }}
+            >
+              <span
+                className={`transition-colors duration-200 ${
+                  activeSection === "about"
+                    ? "text-blue-500 dark:text-[#fd204f]"
+                    : ""
+                }`}
+              >
+                <FaUser className="inline-block pb-1 mr-2" size={20} />
+                About
+              </span>
+            </RouterLink>
+          </li>
+
           <li>
             <RouterLink
               to="/contact"
@@ -168,10 +170,7 @@ const Navbar = () => {
         {/* MD SCREENS BUTTONS */}
 
         <li className="ml-4 mt-2 mb-2 md:ml-2 md:mt-3 block lg:hidden">
-          <ScrollLink to="home"
-              smooth={true}
-              offset={-70}
-              duration={500}>
+          <ScrollLink to="home" smooth={true} offset={-70} duration={500}>
             <img
               src={darkMode ? LogoRed : LogoBlue}
               alt=""
@@ -203,26 +202,6 @@ const Navbar = () => {
           </li>
           <li>
             <ScrollLink
-              to="about"
-              smooth={true}
-              offset={-70}
-              duration={500}
-              style={{ pointerEvents: isClickable ? "auto" : "none" }}
-            >
-              <span
-                className={`transition-colors duration-200 ${
-                  activeSection === "about"
-                    ? "text-blue-500 dark:text-[#fd204f]"
-                    : ""
-                }`}
-              >
-                <FaUser className="inline-block pb-1 mr-2" size={20} />
-                About
-              </span>
-            </ScrollLink>
-          </li>
-          <li>
-            <ScrollLink
               to="projects"
               smooth={true}
               offset={-70}
@@ -241,6 +220,27 @@ const Navbar = () => {
               </span>
             </ScrollLink>
           </li>
+          <li>
+            <ScrollLink
+              to="about"
+              smooth={true}
+              offset={-70}
+              duration={500}
+              style={{ pointerEvents: isClickable ? "auto" : "none" }}
+            >
+              <span
+                className={`transition-colors duration-200 ${
+                  activeSection === "about"
+                    ? "text-blue-500 dark:text-[#fd204f]"
+                    : ""
+                }`}
+              >
+                <FaUser className="inline-block pb-1 mr-2" size={20} />
+                About
+              </span>
+            </ScrollLink>
+          </li>
+
           <li>
             <ScrollLink
               to="contact"
@@ -263,7 +263,6 @@ const Navbar = () => {
           </li>
         </ul>
 
-       
         <button
           className="ml-auto lg:p-2 focus:outline-none  md:mt-0 "
           onClick={toggleDarkMode}
@@ -326,28 +325,6 @@ const Navbar = () => {
         </li>
         <li>
           <ScrollLink
-            to="about"
-            smooth={true}
-            offset={-70}
-            duration={500}
-            onClick={() => handleClick("about")}
-            className="ml-16 mr-20 text-4xl transition duration-300 ease-in-out relative"
-            style={{ pointerEvents: isClickable ? "auto" : "none" }}
-          >
-            <span
-              className={`flex items-center transition-colors duration-200 ${
-                activeSection === "about"
-                  ? "text-blue-500 dark:text-[#fd204f]"
-                  : ""
-              }`}
-            >
-              <FaUser className="inline-block mr-2 pb-1" size={30} />
-              About
-            </span>
-          </ScrollLink>
-        </li>
-        <li>
-          <ScrollLink
             to="projects"
             smooth={true}
             offset={-70}
@@ -368,6 +345,29 @@ const Navbar = () => {
             </span>
           </ScrollLink>
         </li>
+        <li>
+          <ScrollLink
+            to="about"
+            smooth={true}
+            offset={-70}
+            duration={500}
+            onClick={() => handleClick("about")}
+            className="ml-16 mr-20 text-4xl transition duration-300 ease-in-out relative"
+            style={{ pointerEvents: isClickable ? "auto" : "none" }}
+          >
+            <span
+              className={`flex items-center transition-colors duration-200 ${
+                activeSection === "about"
+                  ? "text-blue-500 dark:text-[#fd204f]"
+                  : ""
+              }`}
+            >
+              <FaUser className="inline-block mr-2 pb-1" size={30} />
+              About
+            </span>
+          </ScrollLink>
+        </li>
+
         <li>
           <ScrollLink
             to="contact"
