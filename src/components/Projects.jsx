@@ -51,12 +51,12 @@ const Projects = () => {
 
   return (
     <div
-    id="projects"
+      id="projects"
       name="/projects"
-      className="flex justify-center items-center pb-20 w-full lg:bg-gray-100 lg:dark:bg-[#181a1b] dark:text-gray-300 text-gray-700 lg:pt-16 sm:pl-4 sm:pr-4  transition-colors duration-200"
+      className="flex justify-center items-center pb-20 w-full lg:bg-gray-100 lg:dark:bg-[#181a1b] dark:text-gray-100 text-gray-700 lg:pt-16 sm:pl-4 sm:pr-4  transition-colors duration-200"
     >
       <motion.div
-        className=" max-w-[500px] md:max-w-[800px]  mx-auto p-4"
+        className="max-w-[500px] md:max-w-[800px] mx-auto p-4"
         initial={{ opacity: 0, translateX: -3 }}
         animate={{ opacity: 1, translateX: 0 }}
         exit={{ opacity: 0, translateX: 3 }}
@@ -70,30 +70,23 @@ const Projects = () => {
           These are some of my latest projects.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 ">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-center">
           {projectData.map((project, index) => (
-            <div
-              key={index}
-              className="group overflow-hidden shadow-md rounded-lg relative transition-all duration-300 hover:shadow-xl"
-            >
+            <div key={index} className="bg-white dark:bg-[#242729] shadow-md hover:shadow-lg rounded-lg overflow-hidden">
               <img
                 src={project.image}
                 alt={project.title}
-                className="max-h-60 w-full object-cover transform group-hover:scale-110 transition-transform duration-300"
+                className="max-h-60 w-full object-cover border-b border-gray-300"
               />
-              <div className="absolute inset-0 bg-black bg-opacity-70 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex justify-center items-center">
-                <div className="text-center px-4">
-                  <p className="text-white text-3xl font-semibold mb-4 shadow-md">
-                    {project.title}
-                  </p>
-                  <p className="text-white text-md mb-10 shadow-md">
-                    {project.description}
-                  </p>
+              <div className="p-4">
+                <p className="text-xl font-semibold mb-2">{project.title}</p>
+                <p className="text-md mb-3">{project.description}</p>
+                <div className="flex justify-center gap-2">
                   <a
                     href={project.liveLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-blue-500 hover:bg-blue-600 dark:bg-[#fd204f] dark:hover:bg-[#da003f] text-white px-5 py-3 mr-2 rounded-full transition-colors duration-300 "
+                    className="bg-blue-500 hover:bg-blue-600 dark:bg-[#fd204f] dark:hover:bg-[#da003f] text-white px-5 py-2 rounded-full transition-colors duration-300"
                   >
                     Live
                   </a>
@@ -101,7 +94,7 @@ const Projects = () => {
                     href={project.codeLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-gray-800 hover:bg-gray-900 text-white px-5 py-3 rounded-full transition-colors duration-300 "
+                    className="bg-gray-800 hover:bg-gray-900 text-white px-5 py-2 rounded-full transition-colors duration-300"
                   >
                     Code
                   </a>
