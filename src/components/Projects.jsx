@@ -71,9 +71,9 @@ const Projects = () => {
               <img
                 src={project.image}
                 alt={project.title}
-                className="max-h-60 w-full object-cover transform md:group-hover:scale-110 transition-transform duration-300"
+                className="max-h-60 w-full object-cover transform group-hover:scale-110 transition-transform duration-300"
               />
-              <div className="absolute inset-0 bg-black bg-opacity-70 md:opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex justify-center items-center">
+              <div className="absolute inset-0 bg-black bg-opacity-70 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex justify-center items-center">
                 <div className="text-center px-4">
                   <p className="text-white text-3xl font-semibold mb-4 shadow-md">
                     {project.title}

@@ -20,7 +20,7 @@ const Home = () => {
     >
       {/* CONTAINER */}
       <motion.div
-        className="max-w-[600px] md:max-w-[800px] mx-auto flex flex-col justify-center items-center h-3/4 md:h-full"
+        className="mx-auto flex flex-col justify-center items-center h-full"
         initial={{ opacity: 0, translateX: -3 }}
         animate={{ opacity: 1, translateX: 0 }}
         exit={{ opacity: 0, translateX: 3 }}
