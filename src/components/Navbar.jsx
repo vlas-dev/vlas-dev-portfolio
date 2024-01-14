@@ -96,7 +96,7 @@ const Navbar = () => {
   }, [activeSection, location.pathname]);
 
   return (
-    <div className="fixed w-screen h-[65px] bg-gray-100 dark:bg-[#151617] nav-index border-b-2 border-gray-200 dark:border-[#222425] transition-colors duration-200 ">
+    <div className="fixed w-full h-[65px] bg-gray-100 dark:bg-[#151617] nav-index border-b-2 border-gray-200 dark:border-[#222425] transition-colors duration-200 ">
       <div className="max-w-[800px] mx-auto flex justify-between items-center">
         <div className="ml-4 mt-2 mb-2 md:ml-2 md:mt-3 hidden lg:block">
           <RouterLink to="/" onClick={() => handleClick("home")}>
