@@ -17,7 +17,7 @@ const Projects = () => {
     },
     {
       title: "Synergy",
-      description: "Business platform for collaborative efforts.",
+      description: "Business platform dedicated to enhancing and promoting teamwork.",
       image: synergyImg,
       liveLink: "https://synergy-solutions.vercel.app",
       codeLink: "https://github.com/vlas-dev/nextjs-site-UPDATE",
