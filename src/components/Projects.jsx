@@ -9,11 +9,11 @@ import { motion } from "framer-motion";
 const Projects = () => {
   const projectData = [
     {
-      title: "New Project",
-      description: "Description of the new project.",
+      title: "TechZone",
+      description: "An E-commerce platform for the latest electronics in the market.",
       image: newProjectImg,
-      liveLink: "https://link-to-new-project",
-      codeLink: "https://github-link-to-new-project",
+      liveLink: "https://techzone-vlas-dev.vercel.app/",
+      codeLink: "https://github.com/vlas-dev/ecommerce-vite",
     },
     {
       title: "Synergy",

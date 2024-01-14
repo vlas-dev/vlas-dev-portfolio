@@ -28,15 +28,15 @@ const About = () => {
       >
         <div className="w-full max-w-[600px]  text-center">
           <h2 className="text-4xl font-bold mb-4">About Me</h2>
-          <p>
-            My work consists in creating web apps mainly using React, as well
+          <p className="px-5">
+            My work consists in creating responsive web apps, as well
             as editing and designing multimedia content. With this combined
-            skill set, I try to bring engaging user experiences to life.
+            skill set, I bring engaging user experiences to life.
           </p>
         </div>
 
-        <div className="mt-10 w-[400px] mx-auto">
-          <h3 className="text-2xl font-bold mb-8 text-center">Main Skills</h3>
+        <div className="mt-10">
+          <h3 className="text-2xl font-bold mb-8 text-center max-w-[200px] mx-auto">Main Skills</h3>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             <SkillCard icon={SiHtml5} label="HTML" color="#e44d26" />
             <SkillCard icon={SiCss3} label="CSS" color="#264de4" />

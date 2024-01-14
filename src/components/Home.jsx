@@ -32,7 +32,7 @@ const Home = () => {
             Hi! I'm <span className="text-blue-500 dark:text-[#fd204f]">Fabián</span>
           </h1>
           <p className="mt-6 text-xl md:text-2xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
-            I'm a Front-End Developer from Argentina. I create modern and responsive web apps using React.
+            I'm a Front-End Developer from Argentina. I create modern and responsive web apps.
           </p>
           <p className="mt-6 mb-6 text-xl md:text-2xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto font-semibold">Let's build something amazing together!</p>
           <div className="flex justify-center">
