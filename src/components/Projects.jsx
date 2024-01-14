@@ -3,25 +3,24 @@ import calculatorImg from "../assets/calculatorImg.jpeg";
 import weatherImg from "../assets/weatherImg.jpeg";
 import rpsImg from "../assets/rpsImg.jpeg";
 import synergyImg from "../assets/synergyImg.jpeg";
+import newProjectImg from "../assets/newProjectImg.jpeg"
 import { motion } from "framer-motion";
 
 const Projects = () => {
   const projectData = [
     {
-      title: "Calculator",
-      description:
-        "Simple calculator integrated into a phone interface using CSS.",
-      image: calculatorImg,
-      liveLink: "https://vlas-dev.github.io/calculator-app",
-      codeLink: "https://github.com/vlas-dev/calculator-app",
+      title: "New Project",
+      description: "Description of the new project.",
+      image: newProjectImg,
+      liveLink: "https://link-to-new-project",
+      codeLink: "https://github-link-to-new-project",
     },
     {
-      title: "Weather App",
-      description:
-        "Quick tool to check the weather of any city using the OpenWeatherMap API.",
-      image: weatherImg,
-      liveLink: "https://vlas-dev.github.io/weather-app",
-      codeLink: "https://github.com/vlas-dev/RPS-app",
+      title: "Synergy",
+      description: "Business platform for collaborative efforts.",
+      image: synergyImg,
+      liveLink: "https://synergy-solutions.vercel.app",
+      codeLink: "https://github.com/vlas-dev/nextjs-site-UPDATE",
     },
     {
       title: "R.P.S.",
@@ -32,14 +31,23 @@ const Projects = () => {
       codeLink: "https://github.com/vlas-dev/RPS-app",
     },
     {
-      title: "Synergy",
-      description: "Business platform for collaborative efforts.",
-      image: synergyImg,
-      liveLink: "https://synergy-solutions.vercel.app",
-      codeLink: "https://github.com/vlas-dev/nextjs-site-UPDATE",
+      title: "Weather App",
+      description:
+        "Quick tool to check the weather of any city using the OpenWeatherMap API.",
+      image: weatherImg,
+      liveLink: "https://vlas-dev.github.io/weather-app",
+      codeLink: "https://github.com/vlas-dev/RPS-app",
     },
-   
+    {
+      title: "Calculator",
+      description:
+        "Simple calculator integrated into a phone interface using CSS.",
+      image: calculatorImg,
+      liveLink: "https://vlas-dev.github.io/calculator-app",
+      codeLink: "https://github.com/vlas-dev/calculator-app",
+    }
   ];
+  
 
   return (
     <div

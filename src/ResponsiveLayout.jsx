@@ -6,7 +6,7 @@ import Contact from "./components/Contact";
 
 function ResponsiveLayout() {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col w-full">
       <section className="min-h-screen bg-gradient-to-l  from-white to-gray-100 dark:from-[#181a1b] dark:to-[#202224] p-4">
         <Home />
       </section>
