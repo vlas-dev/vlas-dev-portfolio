@@ -8,13 +8,13 @@ import { motion } from "framer-motion";
 
 const Projects = () => {
   const projectData = [
-    {
-      title: "TechZone",
-      description: "An E-commerce platform for the latest electronics in the market.",
-      image: newProjectImg,
-      liveLink: "https://techzone-vlas-dev.vercel.app/",
-      codeLink: "https://github.com/vlas-dev/ecommerce-vite",
-    },
+    // {
+    //   title: "TechZone",
+    //   description: "An E-commerce platform for the latest electronics in the market.",
+    //   image: newProjectImg,
+    //   liveLink: "https://techzone-vlas-dev.vercel.app/",
+    //   codeLink: "https://github.com/vlas-dev/ecommerce-vite",
+    // },
     {
       title: "Synergy",
       description: "Business platform dedicated to enhancing and promoting teamwork.",
