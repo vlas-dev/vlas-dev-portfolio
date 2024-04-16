@@ -1,23 +1,61 @@
 import React from "react";
 import {
-  SiJavascript, SiTypescript, SiReact, 
-  SiTailwindcss, SiAdobephotoshop, SiAdobeillustrator, SiFigma, SiNextdotjs,
+  SiJavascript,
+  SiTypescript,
+  SiReact,
+  SiTailwindcss,
+  SiAdobephotoshop,
+  SiAdobeillustrator,
+  SiFigma,
+  SiNextdotjs,
+  SiGit,
+  SiGithub,
+  SiMongodb,
+  SiNodedotjs,
+  SiLinux,
+  SiPostman,
 } from "react-icons/si";
-import ZustandLogo from "../assets/zustand.png";
 import { RiBearSmileLine } from "react-icons/ri";
-
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 
 const SkillCard = ({ icon, label, color, bgColor }) => {
-  // Check if the icon prop is a string (image path) and render an img tag if true
-  const content = typeof icon === "string" ? (
-    <img src={icon} alt={label} style={{ width: 40, height: 40, objectFit: 'cover', backgroundColor: bgColor }} />
-  ) : (
-    React.createElement(icon, { size: 40, style: { color, backgroundColor: bgColor } })
-  );
+  const controls = useAnimation();
+
+  const handleCardClick = () => {
+    controls.start({
+      rotate: 360,
+      transition: { duration: 0.5 },
+    }).then(() => {
+      controls.set({ rotate: 0 });
+    });
+  };
+
+  const content =
+    typeof icon === "string" ? (
+      <img
+        src={icon}
+        alt={label}
+        style={{
+          width: 50,
+          height: 40,
+          objectFit: "cover",
+          backgroundColor: bgColor,
+        }}
+      />
+    ) : (
+      <motion.div animate={controls}>
+        {React.createElement(icon, {
+          size: 40,
+          style: { color, backgroundColor: bgColor },
+        })}
+      </motion.div>
+    );
 
   return (
-    <div className="flex flex-col items-center p-3 bg-white dark:bg-[#151617] shadow-lg rounded-lg" style={{ width: 'auto', flex: '0 0 100px' }}>
+    <div
+      onClick={handleCardClick}
+      className="flex flex-col items-center p-3 bg-white dark:bg-stone-900 shadow-lg hover:shadow-stone-400 dark:hover:shadow-stone-600 transition-transform-all duration-300 rounded-lg border-2 border-stone-300 dark:border-stone-400 w-32 md:w-44 cursor-pointer"
+    >
       {content}
       <p className="mt-1 font-semibold">{label}</p>
     </div>
@@ -26,49 +64,80 @@ const SkillCard = ({ icon, label, color, bgColor }) => {
 
 const About = () => {
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, translateX: -10 }}
+      animate={{ opacity: 1, translateX: 0 }}
+      exit={{ opacity: 0, translateX: 3 }}
+      transition={{ duration: 0.3 }}
       id="about"
       name="/about"
-      className="flex flex-col justify-center items-center min-h-screen lg:bg-gray-100 lg:dark:bg-[#181a1b] text-[#444440] dark:text-gray-300 transition-colors duration-200 pt-5 md:pt-0 lg:pt-20 pb-10 "
+      className="flex flex-col items-center min-h-screen transition-colors duration-200 pt-5 pb-32"
     >
-      <motion.div
-        initial={{ opacity: 0, translateX: -3 }}
-        animate={{ opacity: 1, translateX: 0 }}
-        exit={{ opacity: 0, translateX: 3 }}
-        transition={{ duration: 0.3 }}
-      >
-        <div className="w-full max-w-[600px] text-center">
-          <h2 className="text-4xl font-bold mb-4">About Me</h2>
-          <p className="px-5">
-            My work consists in creating responsive web apps, as well
-            as editing and designing multimedia content. With this combined
-            skill set, I bring engaging user experiences to life.
-          </p>
-        </div>
+      <div className="w-full max-w-[700px] text-center">
+        <h2 className="text-4xl font-bold mb-4">About Me</h2>
+        <p className="px-5">
+          My work consists of creating responsive web apps, as well as editing
+          and designing multimedia content. With this combined skill set, I
+          bring engaging user experiences to life.
+        </p>
+      </div>
 
-        <div className="mt-10">
-          <h3 className="text-2xl font-bold mb-8 text-center max-w-[200px] mx-auto">Main Skills</h3>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            <SkillCard icon={SiJavascript} label="JavaScript" color="#f7df1e" bgColor="black" />
-            <SkillCard icon={SiReact} label="React.js" color="#149eca" />
-            <SkillCard icon={SiNextdotjs} label="Next.js" color="#0e0e0e dark:#eeeeee" />
-            <SkillCard icon={SiTypescript} label="TypeScript" color="#2f74c0" />
-            
-            <SkillCard icon={RiBearSmileLine} label="Zustand" color="#2759c6" />
-            <SkillCard icon={SiTailwindcss} label="Tailwind" color="#07b6d5" />
-          </div>
+      <div className="mt-10">
+        <h3 className="text-2xl font-bold mb-8 text-center max-w-[200px] mx-auto">
+          Main Skills
+        </h3>
+        <div className="flex flex-wrap justify-center md:grid-cols-3 gap-4 px-10 max-w-[700px]">
+          <SkillCard
+            icon={SiJavascript}
+            label="JavaScript"
+            color="#f7df1e"
+            bgColor="black"
+          />
+          <SkillCard icon={SiReact} label="React.js" color="#149eca" />
+          <SkillCard
+            icon={SiNextdotjs}
+            label="Next.js"
+            color="#0e0e0e dark:#eeeeee"
+          />
+          <SkillCard icon={SiTypescript} label="TypeScript" color="#2f74c0" />
+          <SkillCard icon={RiBearSmileLine} label="Zustand" color="#2759c6" />
+          <SkillCard icon={SiTailwindcss} label="Tailwind" color="#07b6d5" />
+          <SkillCard icon={SiGit} label="Git" color="#f34f29" />
+          <SkillCard icon={SiMongodb} label="MongoDB" color="#47a248" />
+          <SkillCard icon={SiNodedotjs} label="Node.js" color="#83cd29" />
         </div>
+      </div>
 
-        <div className="mt-8">
-          <h3 className="text-lg font-bold mb-5 text-center">Additional Skills</h3>
-          <div className="flex justify-center gap-4">
-            <SkillCard icon={SiAdobephotoshop} label="Photoshop" color="#31A8FF" />
-            <SkillCard icon={SiAdobeillustrator} label="Illustrator" color="orange" />
-            <SkillCard icon={SiFigma} label="Figma" color="red" />
-          </div>
+      <div className="mt-8">
+        <h3 className="text-lg font-bold mb-5 text-center">
+          Complementary Skills
+        </h3>
+        <div className="flex flex-wrap justify-center md:grid-cols-3 gap-4 px-10 max-w-[700px]">
+          <SkillCard icon={SiPostman} label="Postman" color="#FF713E" />
+          <SkillCard
+            icon={SiGithub}
+            label="GitHub"
+            color="#181717 dark:#dddddd"
+          />
+          <SkillCard
+            icon={SiLinux}
+            label="Linux"
+            color="#070707 dark:#dddddd"
+          />
+          <SkillCard
+            icon={SiAdobephotoshop}
+            label="Photoshop"
+            color="#2A65D3"
+          />
+          <SkillCard
+            icon={SiAdobeillustrator}
+            label="Illustrator"
+            color="CE5D08"
+          />
+          <SkillCard icon={SiFigma} label="Figma" color="red" />
         </div>
-      </motion.div>
-    </div>
+      </div>
+    </motion.div>
   );
 };
 

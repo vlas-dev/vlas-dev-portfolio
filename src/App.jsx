@@ -1,13 +1,15 @@
-import { HashRouter as Router } from 'react-router-dom';
+import { HashRouter as Router } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import AnimatedRoutes from './AnimatedRoutes';
+import Footer from "./components/Footer";
+import AnimatedRoutes from "./AnimatedRoutes";
 
 function App() {
   return (
     <Router>
-      <div>
+      <div className="text-[#444440] dark:text-stone-100 min-h-screen">
         <Navbar />
-        <AnimatedRoutes/>
+        <AnimatedRoutes />
+        <Footer />
       </div>
     </Router>
   );

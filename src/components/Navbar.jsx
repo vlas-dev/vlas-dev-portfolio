@@ -4,14 +4,17 @@ import { Link as ScrollLink } from "react-scroll";
 import { FaHome, FaUser, FaBriefcase, FaPhone } from "react-icons/fa";
 import { IoIosSunny, IoIosMoon } from "react-icons/io";
 import { Squash as Hamburger } from "hamburger-react";
-import LogoBlue from "../assets/logoBlue.png";
-import LogoRed from "../assets/logoRed.png";
+import LogoBlue from "/images/assets/logoBlue.png";
+import LogoRed from "/images/assets/logoRed.png";
 
 const Navbar = () => {
+  // Initialize darkMode state from localStorage or system preferences
+  const [darkMode, setDarkMode] = useState(() => {
+    const localSetting = localStorage.getItem("darkMode");
+    return localSetting ? localSetting === "true" : window.matchMedia('(prefers-color-scheme: dark)').matches;
+  });
+
   const [nav, setNav] = useState(false);
-  const [darkMode, setDarkMode] = useState(
-    localStorage.getItem("darkMode") === "true"
-  );
   const location = useLocation();
   const [activeSection, setActiveSection] = useState("");
   const [isClickable, setIsClickable] = useState(true);
@@ -39,44 +42,32 @@ const Navbar = () => {
 
   useEffect(() => {
     const path = location.pathname; // Get the current URL path
-
-    // Map the section URLs to their corresponding IDs
     const sectionURLs = {
       "/": "home",
       "/projects": "projects",
       "/about": "about",
-
       "/contact": "contact",
     };
-
     setActiveSection(sectionURLs[path]); // Set the active section based on the current URL
   }, [location]);
 
   useEffect(() => {
-    const updateActiveSection = (currentSection) => {
-      if (currentSection !== activeSection) {
-        setActiveSection(currentSection);
-      }
-    };
-
     const handleScroll = () => {
-      const isLargeScreen = window.innerWidth >= 1024; // Adjust this value based on your layout's breakpoint for large screens
+      const isLargeScreen = window.innerWidth >= 1024;
       if (isLargeScreen) {
-        // On large screens, set active section based on current route
         const path = location.pathname;
         const sectionURLs = { "/": "home", "/projects": "projects", "/about": "about", "/contact": "contact" };
-        updateActiveSection(sectionURLs[path] || "");
+        setActiveSection(sectionURLs[path]);
         return;
       }
 
       const sections = ["home", "projects", "about", "contact"];
-
       for (let section of sections) {
         const sectionEl = document.getElementById(section);
         if (sectionEl) {
           const bounds = sectionEl.getBoundingClientRect();
           if (bounds.top <= window.innerHeight / 2 && bounds.bottom >= window.innerHeight / 2) {
-            updateActiveSection(section);
+            setActiveSection(section);
             return;
           }
         }
@@ -84,11 +75,8 @@ const Navbar = () => {
     };
 
     window.addEventListener("scroll", handleScroll);
-    window.addEventListener("resize", handleScroll); // Re-evaluate when the window is resized
-
-    // Initial check on mount
+    window.addEventListener("resize", handleScroll);
     handleScroll();
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleScroll);
@@ -96,7 +84,7 @@ const Navbar = () => {
   }, [activeSection, location.pathname]);
 
   return (
-    <div className="fixed w-full h-[65px] bg-gray-100 dark:bg-[#151617] nav-index border-b-2 border-gray-200 dark:border-[#222425] transition-colors duration-200 ">
+    <div className="sticky top-0 w-full h-[65px] bg-stone-100 dark:bg-stone-900 nav-index border-b-2 border-stone-200 dark:border-stone-700 transition-colors duration-200 ">
       <div className="max-w-[800px] mx-auto flex justify-between items-center">
         <div className="ml-4 mt-2 mb-2 md:ml-2 md:mt-3 hidden lg:block">
           <RouterLink to="/" onClick={() => handleClick("home")}>
@@ -108,7 +96,7 @@ const Navbar = () => {
           </RouterLink>
         </div>
 
-        <ul className="hidden lg:flex flex-grow justify-center text-gray-600 dark:text-gray-300 text-lg">
+        <ul className="hidden lg:flex flex-grow justify-center text-lg">
           <li>
             <RouterLink
               to="/"
@@ -325,7 +313,7 @@ const Navbar = () => {
             offset={-70}
             duration={500}
             onClick={() => handleClick("home")}
-            className="ml-16 mr-20 text-4xl transition duration-300 ease-in-out relative"
+            className="ml-16 mr-20 text-3xl transition duration-300 ease-in-out relative"
             style={{ pointerEvents: isClickable ? "auto" : "none" }}
           >
             <span
@@ -347,7 +335,7 @@ const Navbar = () => {
             offset={-70}
             duration={500}
             onClick={() => handleClick("projects")}
-            className="ml-16 mr-20 text-4xl transition duration-300 ease-in-out relative"
+            className="ml-16 mr-20 text-3xl transition duration-300 ease-in-out relative"
             style={{ pointerEvents: isClickable ? "auto" : "none" }}
           >
             <span
@@ -369,7 +357,7 @@ const Navbar = () => {
             offset={-70}
             duration={500}
             onClick={() => handleClick("about")}
-            className="ml-16 mr-20 text-4xl transition duration-300 ease-in-out relative"
+            className="ml-16 mr-20 text-3xl transition duration-300 ease-in-out relative"
             style={{ pointerEvents: isClickable ? "auto" : "none" }}
           >
             <span
@@ -392,7 +380,7 @@ const Navbar = () => {
             offset={-70}
             duration={500}
             onClick={() => handleClick("contact")}
-            className="ml-16 mr-20 text-4xl transition duration-300 ease-in-out relative"
+            className="ml-16 mr-20 text-3xl transition duration-300 ease-in-out relative"
             style={{ pointerEvents: isClickable ? "auto" : "none" }}
           >
             <span

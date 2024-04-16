@@ -1,18 +1,18 @@
-import React, { useEffect } from 'react';
-import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
-import Home from './components/Home';
-import About from './components/About';
-import Projects from './components/Projects';
-import Contact from './components/Contact';
-import ResponsiveLayout from './ResponsiveLayout';
-import { AnimatePresence } from 'framer-motion';
-import { GrPrevious, GrNext } from 'react-icons/gr';
+import React, { useEffect } from "react";
+import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
+import Home from "./components/Home";
+import About from "./components/About";
+import Projects from "./components/Projects";
+import Contact from "./components/Contact";
+import ResponsiveLayout from "./ResponsiveLayout";
+import { AnimatePresence } from "framer-motion";
+import { GrPrevious, GrNext } from "react-icons/gr";
 
 function AnimatedRoutes() {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const routes = ['/', '/projects', '/about', '/contact'];
+  const routes = ["/", "/projects", "/about", "/contact"];
   const currentRouteIndex = routes.indexOf(location.pathname);
 
   const navigateToNext = () => {
@@ -21,23 +21,24 @@ function AnimatedRoutes() {
   };
 
   const navigateToPrev = () => {
-    const prevRouteIndex = (currentRouteIndex - 1 + routes.length) % routes.length;
+    const prevRouteIndex =
+      (currentRouteIndex - 1 + routes.length) % routes.length;
     const prevRoute = routes[prevRouteIndex];
     navigate(prevRoute);
   };
 
   useEffect(() => {
     const checkScreenSize = () => {
-      const isLargeScreen = window.matchMedia('(min-width: 1024px)').matches;
+      const isLargeScreen = window.matchMedia("(min-width: 1024px)").matches;
       if (!isLargeScreen) {
-        navigate('/');
+        navigate("/");
       }
     };
 
-    window.addEventListener('resize', checkScreenSize);
+    window.addEventListener("resize", checkScreenSize);
     checkScreenSize();
 
-    return () => window.removeEventListener('resize', checkScreenSize);
+    return () => window.removeEventListener("resize", checkScreenSize);
   }, [navigate]);
 
   return (
@@ -45,7 +46,7 @@ function AnimatedRoutes() {
       <div className="lg:hidden">
         <ResponsiveLayout />
       </div>
-      <div className="hidden lg:block h-screen">
+      <div className="hidden lg:block bg-gradient-to-r from-stone-100 via-white to-stone-200 dark:from-stone-950 dark:via-stone-900 dark:to-stone-800">
         <div className="fixed top-0 bottom-0 z-10 flex items-center justify-center h-full">
           <button
             onClick={navigateToPrev}

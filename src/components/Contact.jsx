@@ -32,7 +32,7 @@ const Contact = () => {
     <div
     id="contact"
       name="/contact"
-      className="flex justify-center lg:items-center pt-5 md:pt-10 lg:pt-0 lg:h-screen w-full lg:bg-gray-100 text-[#444440] dark:text-gray-300 lg:dark:bg-[#181a1b] sm:pl-4 sm:pr-4 text-center  transition-colors duration-200"
+      className="flex justify-center lg:pt-14 pt-5 min-h-screen w-full text-center transition-colors duration-200"
     
 
     >
@@ -50,17 +50,17 @@ const Contact = () => {
           </p>
 
           {/* SOCIAL ICONS */}
-          <div className="flex justify-center pt-8 gap-5 text-[#444440] dark:text-gray-300">
+          <div className="flex justify-center pt-8 gap-5">
             <a
-              className="transition-all duration-100 ease-in-out transform  hover:text-blue-500 hover:dark:text-[#fd204f]"
-              href="https://www.linkedin.com/in/fabi%C3%A1n-musicco-a164231b4/"
+              className="transition-all duration-300 ease-in-out transform  hover:text-blue-500 hover:dark:text-[#fd204f]"
+              href="https://www.linkedin.com/in/musicco-dev/"
               target="_blank"
               rel="noopener noreferrer"
             >
               <FaLinkedin size={40} />
             </a>
             <a
-              className="transition-all duration-100 ease-in-out transform hover:text-blue-500 hover:dark:text-[#fd204f]"
+              className="transition-all duration-300 ease-in-out transform hover:text-blue-500 hover:dark:text-[#fd204f]"
               href="https://github.com/vlas-dev"
               target="_blank"
               rel="noopener noreferrer"
@@ -69,7 +69,7 @@ const Contact = () => {
             </a>
             <button
               type="button"
-              className="transition-all duration-100 ease-in-out transform cursor-pointer hover:text-blue-500 hover:dark:text-[#fd204f]"
+              className="transition-all duration-300 ease-in-out transform cursor-pointer hover:text-blue-500 hover:dark:text-[#fd204f]"
               onClick={copyEmail}
             >
               <HiOutlineMail size={40} />
@@ -85,7 +85,7 @@ const Contact = () => {
           style={{ maxWidth: "600px" }}
         >
           <input
-            className="p-2 bg-[#ededed] text-[#303030] placeholder-[#777777] hover:text-[#0e1621] w-full border-solid border-2 border-[#adadad] dark:border-[#ededed] rounded"
+            className="p-2 bg-stone-100 text-[#303030] placeholder-stone-400 hover:text-[#0e1621] w-full border-solid border-2 border-stone-300 rounded"
             type="text"
             placeholder="Name"
             name="name"
@@ -93,7 +93,7 @@ const Contact = () => {
             required
           />
           <input
-            className="my-4 p-2 bg-[#ededed] text-[#303030] placeholder-[#777777] w-full border-solid border-2 border-[#adadad] dark:border-[#ededed] rounded"
+            className="my-4 p-2 bg-stone-100 text-[#303030] placeholder-stone-400 w-full border-solid border-2 border-stone-300 rounded"
             type="text"
             placeholder="Email"
             name="email"
@@ -101,14 +101,14 @@ const Contact = () => {
             required
           />
           <textarea
-            className="p-2 bg-[#ededed] text-[#303030] placeholder-[#777777] w-full border-solid border-2 border-[#adadad] dark:border-[#ededed] rounded"
+            className="p-2 bg-stone-100 text-[#303030] placeholder-stone-400 w-full border-solid border-2 border-stone-300 rounded"
             name="message"
             rows="7"
             placeholder="Message"
             style={{ outline: "none" }}
             required
           ></textarea>
-          <button className="text-white  bg-blue-500 dark:bg-[#fd204f] hover:bg-blue-600 hover:dark:bg-[#da003f]  hover:border-gray-600   px-5 py-3  my-5 mx-auto flex items-center rounded-full transition-colors duration-200">
+          <button className="text-stone-100  bg-blue-500 dark:bg-[#fd204f] hover:bg-blue-600 hover:dark:bg-[#911232]  hover:border-stone-600   px-5 py-3  my-5 mx-auto flex items-center rounded-full transition-colors duration-200">
             Send
           </button>
         </form>

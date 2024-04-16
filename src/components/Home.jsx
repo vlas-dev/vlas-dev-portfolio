@@ -16,25 +16,25 @@ const Home = () => {
     <div
       id="home"
       name="/"
-      className="w-full h-screen lg:bg-gray-100 lg:dark:bg-[#181a1b] transition-colors duration-200"
+      className="h-screen pb-40 transition-colors duration-200"
     >
       {/* CONTAINER */}
       <motion.div
-        className="mx-auto flex flex-col justify-center items-center h-full"
-        initial={{ opacity: 0, translateX: -3 }}
+        className="mx-auto flex flex-col justify-center items-center h-full max-w-[900px] "
+        initial={{ opacity: 0, translateX: -10 }}
         animate={{ opacity: 1, translateX: 0 }}
         exit={{ opacity: 0, translateX: 3 }}
         transition={{ duration: 0.3 }}
         style={{ overflowAnchor: 'auto' }}
       >
         <div className="text-center">
-          <h1 className="text-6xl md:text-7xl font-bold text-gray-600 dark:text-gray-300">
+          <h1 className="text-6xl md:text-7xl font-bold">
             Hi! I'm <span className="text-blue-500 dark:text-[#fd204f]">Fabián</span>
           </h1>
-          <p className="mt-6 text-xl md:text-2xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
+          <p className="mt-6 text-xl md:text-2xl max-w-3xl mx-auto">
             I'm a Front-End Developer from Argentina. I create modern and responsive web apps.
           </p>
-          <p className="mt-6 mb-6 text-xl md:text-2xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto font-semibold">Let's build something amazing together!</p>
+          <p className="mt-6 mb-6 text-xl md:text-2xl max-w-3xl mx-auto font-semibold">Let's build something amazing together!</p>
           <div className="flex justify-center">
             <div
               className="relative mt-5"
@@ -53,7 +53,7 @@ const Home = () => {
                     animate={{ x: isHovered ? 5 : 0 }}
                     transition={{ yoyo: Infinity, duration: 0.5 }}
                   >
-                    <FiArrowRight className="text-white" style={{ marginTop: '3px' }} />
+                    <FiArrowRight className="text-white" />
                   </motion.span>
                 </button>
               </RouterLink>
@@ -70,7 +70,7 @@ const Home = () => {
                     animate={{ y: isHovered ? 5 : 0 }}
                     transition={{ yoyo: Infinity, duration: 0.5 }}
                   >
-                    <FiArrowDown className="text-white" style={{ marginTop: '3px' }} />
+                    <FiArrowDown className="text-white" />
                   </motion.span>
                 </button>
               </ScrollLink>
