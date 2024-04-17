@@ -184,7 +184,7 @@ const Navbar = () => {
           </ScrollLink>
         </li>
 
-        <ul className="hidden md:flex lg:hidden flex-grow justify-center text-gray-600 dark:text-gray-300 text-lg">
+        <ul className="hidden md:flex lg:hidden flex-grow justify-center text-lg">
           <li>
             <ScrollLink
               to="home"
@@ -274,11 +274,11 @@ const Navbar = () => {
         >
           {darkMode ? (
             <div className="flex items-center justify-center p-3 mt-2 md:p-0 md:mt-0 md:mr-10 lg:mr-0">
-              <IoIosSunny className="h-8 w-8 text-gray-300 hover:text-blue-500  hover:dark:text-[#fd204f] transition-colors duration-200" />
+              <IoIosSunny className="h-8 w-8 hover:text-blue-500  hover:dark:text-[#fd204f] transition-colors duration-200" />
             </div>
           ) : (
             <div className="flex items-center justify-center p-3 mt-2 md:p-0 md:mt-0 md:mr-10 lg:mr-0">
-              <IoIosMoon className="h-8 w-8 text-gray-500  hover:text-blue-500 hover:dark:text-[#fd204f] transition-colors duration-200" />
+              <IoIosMoon className="h-8 w-8 hover:text-blue-500 hover:dark:text-[#fd204f] transition-colors duration-200" />
             </div>
           )}
         </button>
@@ -302,7 +302,7 @@ const Navbar = () => {
         onClick={() => setNav(false)}
       ></div>
       <ul
-        className={`lg:hidden fixed top-0 right-0 h-screen px-10 bg-white dark:bg-[#181a1b] flex flex-col justify-center z-50  text-gray-600 dark:text-gray-300 transform  ${
+        className={`lg:hidden fixed top-0 right-0 h-screen px-10 bg-stone-100 dark:bg-stone-900 flex flex-col justify-center z-50 transform  ${
           nav ? "translate-x-0" : "translate-x-full"
         } transition duration-300 ease-in-out`}
       >

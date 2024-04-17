@@ -306,7 +306,7 @@ const Projects = () => {
                     href={project.liveLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-blue-500 hover:bg-blue-600 dark:bg-[#fd204f] dark:hover:bg-[#911232] text-white px-5 py-2 rounded-full transition-colors duration-300 flex items-center justify-center gap-2"
+                    className="bg-blue-500 hover:bg-blue-600 dark:bg-[#fd204f] dark:hover:bg-[#911232] text-white px-5 py-2 rounded-full transition-colors duration-100 flex items-center justify-center gap-2"
                   >
                     <FaExternalLinkAlt />
                     Live
@@ -315,7 +315,7 @@ const Projects = () => {
                     href={project.codeLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-stone-600 hover:bg-stone-900 dark:bg-stone-500 hover:dark:bg-stone-700 text-white px-5 py-2 rounded-full transition-colors duration-300 flex items-center justify-center gap-2"
+                    className="bg-stone-600 hover:bg-stone-900 dark:bg-stone-500 hover:dark:bg-stone-700 text-white px-5 py-2 rounded-full transition-colors duration-100 flex items-center justify-center gap-2"
                   >
                     <FaExternalLinkAlt />
                     Code

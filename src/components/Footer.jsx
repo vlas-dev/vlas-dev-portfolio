@@ -15,7 +15,7 @@ const copyEmail = () => {
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-200 dark:bg-[#151617] border-t-2 border-gray-300 dark:border-[#222425] text-gray-700 dark:text-gray-100 h-40 text-center p-4 w-full sticky">
+    <footer className="bg-stone-200 dark:bg-stone-900 border-t-2 border-stone-300 dark:border-stone-800 h-40 text-center p-4 w-full sticky">
       <div className="flex justify-center items-center gap-4 mt-4">
         <a
           className="transition-all duration-200 ease-in-out transform  hover:text-blue-500 hover:dark:text-[#fd204f]"

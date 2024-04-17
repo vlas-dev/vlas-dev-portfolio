@@ -74,7 +74,7 @@ const Contact = () => {
           style={{ maxWidth: "600px" }}
         >
           <input
-            className="p-2 bg-stone-100 text-[#303030] placeholder-stone-400 hover:text-[#0e1621] w-full border-solid border-2 border-stone-300 rounded"
+            className="p-2 bg-stone-100 placeholder-stone-400 w-full border-solid border-2 border-stone-300 rounded"
             type="text"
             placeholder="Name"
             name="name"
@@ -82,7 +82,7 @@ const Contact = () => {
             required
           />
           <input
-            className="my-4 p-2 bg-stone-100 text-[#303030] placeholder-stone-400 w-full border-solid border-2 border-stone-300 rounded"
+            className="my-4 p-2 bg-stone-100 placeholder-stone-400 w-full border-solid border-2 border-stone-300 rounded"
             type="text"
             placeholder="Email"
             name="email"
@@ -90,7 +90,7 @@ const Contact = () => {
             required
           />
           <textarea
-            className="p-2 bg-stone-100 text-[#303030] placeholder-stone-400 w-full border-solid border-2 border-stone-300 rounded"
+            className="p-2 bg-stone-100 placeholder-stone-400 w-full border-solid border-2 border-stone-300 rounded"
             name="message"
             rows="7"
             placeholder="Message"

@@ -50,7 +50,7 @@ function AnimatedRoutes() {
         <div className="fixed top-0 bottom-0 z-10 flex items-center justify-center h-full">
           <button
             onClick={navigateToPrev}
-            className="text-gray-400 dark:text-gray-400 font-bold p-5 md:ml-14 text-4xl transition duration-300 ease-in-out hover:bg-gray-200 hover:dark:bg-[#222426] hover:text-gray-600 hover:dark:text-gray-100 rounded-full"
+            className="text-stone-400 dark:text-stone-400 font-bold p-5 md:ml-14 text-4xl transition duration-300 ease-in-out hover:bg-stone-300 hover:dark:bg-stone-700 hover:text-stone-600 hover:dark:text-stone-100 rounded-full"
           >
             <GrPrevious />
           </button>
@@ -59,7 +59,7 @@ function AnimatedRoutes() {
         <div className="fixed right-0 top-0 bottom-0 z-10 flex items-center justify-center h-full">
           <button
             onClick={navigateToNext}
-            className="text-gray-400 dark:text-gray-400 font-bold p-5 md:mr-14 text-4xl transition duration-300 ease-in-out hover:bg-gray-200 hover:dark:bg-[#222426] hover:text-gray-600 hover:dark:text-gray-100 rounded-full"
+            className="text-stone-400 dark:text-stone-400 font-bold p-5 md:mr-14 text-4xl transition duration-300 ease-in-out hover:bg-stone-300 hover:dark:bg-stone-700 hover:text-stone-600 hover:dark:text-stone-100 rounded-full"
           >
             <GrNext />
           </button>

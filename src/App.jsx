@@ -9,7 +9,7 @@ function App() {
 
   return (
     <Router>
-      <div className="text-[#444440] dark:text-stone-100 min-h-screen">
+      <div className="text-stone-700 dark:text-stone-100 min-h-screen">
         <Navbar />
         <AnimatedRoutes />
         <Footer />

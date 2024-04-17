@@ -57,7 +57,7 @@ const SkillCard = ({ icon, label, color, bgColor, overlayText }) => {
         })
       )}
       {overlayText && (
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-3/4 mt-0.5 font-bold dark:text-white ">
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-3/4 font-bold dark:text-white ">
           {overlayText}
         </div>
       )}
@@ -151,13 +151,13 @@ const About = () => {
             <SkillCard
               icon={HiOutlineChatBubbleLeft}
               label="Spanish - Native"
-              overlayText="ES"
+              overlayText="es"
             />
             <SkillCard
               icon={HiOutlineChatBubbleLeft}
               label="English - C2
       "
-              overlayText="EN"
+              overlayText="en"
             />
           </div>
         </div>
