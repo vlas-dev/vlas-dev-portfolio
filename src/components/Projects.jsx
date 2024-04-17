@@ -1,127 +1,260 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import calculatorImg from "/images/assets/calculatorImg.jpeg";
 import weatherImg from "/images/assets/weatherImg.jpeg";
 import rpsImg from "/images/assets/rpsImg.jpeg";
 import synergyImg from "/images/assets/synergyImg.jpeg";
 import smileProjectImg from "/images/assets/smileProjectImg.jpeg";
-import { SiJavascript, SiCss3, SiTypescript, SiTailwindcss, SiReact, SiNextdotjs, SiMongodb, SiExpress } from 'react-icons/si';
-import { AiOutlineApi } from 'react-icons/ai';
+import {
+  SiJavascript,
+  SiCss3,
+  SiTypescript,
+  SiTailwindcss,
+  SiReact,
+  SiNextdotjs,
+  SiMongodb,
+  SiExpress,
+} from "react-icons/si";
+import { AiOutlineApi } from "react-icons/ai";
 import { motion } from "framer-motion";
+import { FaExternalLinkAlt } from "react-icons/fa";
 
 const Projects = () => {
-// TechIcon component to handle tooltip display
-const TechIcon = ({ Icon, label, style }) => {
-  const [showTooltip, setShowTooltip] = useState(false);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
-  return (
-    <div 
-      onMouseEnter={() => setShowTooltip(true)}
-      onMouseLeave={() => setShowTooltip(false)}
-      style={{ position: 'relative', display: 'inline-block' }}
-    >
-      <Icon style={style} />
-      {showTooltip && (
-        <div 
+  // TechIcon component to handle tooltip display
+  const TechIcon = ({ Icon, label, style }) => {
+    const [showTooltip, setShowTooltip] = useState(false);
+
+    return (
+      <div
+        onMouseEnter={() => setShowTooltip(true)}
+        onMouseLeave={() => setShowTooltip(false)}
+        style={{ position: "relative", display: "inline-block" }}
+      >
+        <Icon style={style} />
+        {showTooltip && (
+          <div
+            style={{
+              position: "absolute",
+              bottom: "30px",
+              left: "50%",
+              transform: "translateX(-50%)",
+              zIndex: 10,
+              backgroundColor: "black",
+              color: "white",
+              borderRadius: "6px",
+              padding: "5px 10px",
+              fontSize: "12px",
+              whiteSpace: "nowrap",
+            }}
+          >
+            {label}
+          </div>
+        )}
+      </div>
+    );
+  };
+
+  const projectData = [
+    {
+      title: "Smile Care",
+      description:
+        "Dental clinic platform with appointment scheduling, ensuring easy access and convenience for patients.",
+      image: smileProjectImg,
+      liveLink: "https://smilecareclinic.vercel.app",
+      codeLink: "https://github.com/vlas-dev/appointments-project-frontend",
+      techStack: [
+        <TechIcon
+          key="react"
+          Icon={SiReact}
+          label="React"
+          style={{ color: "#61dafb", width: "25px", height: "25px" }}
+        />,
+        <TechIcon
+          key="nextjs"
+          Icon={SiNextdotjs}
+          label="Next.js"
+          style={{ color: "", width: "25px", height: "25px" }}
+        />,
+        <TechIcon
+          key="typescript"
+          Icon={SiTypescript}
+          label="TypeScript"
+          style={{ color: "#3178c6", width: "25px", height: "25px" }}
+        />,
+        <TechIcon
+          key="tailwind"
+          Icon={SiTailwindcss}
+          label="Tailwind CSS"
+          style={{ color: "#38b2ac", width: "25px", height: "25px" }}
+        />,
+        <TechIcon
+          key="mongo"
+          Icon={SiMongodb}
+          label="MongoDB"
+          style={{ color: "#4db33d", width: "25px", height: "25px" }}
+        />,
+        <TechIcon
+          key="express"
+          Icon={SiExpress}
+          label="Express.js"
+          style={{ color: "", width: "25px", height: "25px" }}
+        />,
+      ],
+    },
+    {
+      title: "Synergy",
+      description:
+        "Business platform dedicated to enhancing and promoting teamwork.",
+      image: synergyImg,
+      liveLink: "https://synergy-solutions.vercel.app",
+      codeLink: "https://github.com/vlas-dev/nextjs-site-UPDATE",
+      techStack: [
+        <TechIcon
+          key="react"
+          Icon={SiReact}
+          label="React"
+          style={{ color: "#61dafb", width: "25px", height: "25px" }}
+        />,
+        <TechIcon
+          key="nextjs"
+          Icon={SiNextdotjs}
+          label="Next.js"
+          style={{ color: "", width: "25px", height: "25px" }}
+        />,
+        <TechIcon
+          key="js"
+          Icon={SiJavascript}
+          label="JavaScript"
           style={{
-            position: 'absolute',
-            bottom: '30px',
-            left: '50%',
-            transform: 'translateX(-50%)',
-            zIndex: 10,
-            backgroundColor: 'black',
-            color: 'white',
-            borderRadius: '6px',
-            padding: '5px 10px',
-            fontSize: '12px',
-            whiteSpace: 'nowrap'
+            color: "#f7df1e",
+            backgroundColor: "black",
+            width: "25px",
+            height: "25px",
           }}
-        >
-          {label}
-        </div>
-      )}
-    </div>
-  );
-};
-
-  
-const projectData = [
-  {
-    title: "Smile Care",
-    description:
-      "Dental clinic platform with appointment scheduling, ensuring easy access and convenience for patients.",
-    image: smileProjectImg,
-    liveLink: "https://smilecareclinic.vercel.app",
-    codeLink: "https://github.com/vlas-dev/appointments-project-frontend",
-    techStack: [
-      <TechIcon key="react" Icon={SiReact} label="React" style={{ color: "#61dafb", width: "25px", height: "25px" }} />,
-      <TechIcon key="nextjs" Icon={SiNextdotjs} label="Next.js" style={{ color: "", width: "25px", height: "25px" }} />,
-      <TechIcon key="typescript" Icon={SiTypescript} label="TypeScript" style={{ color: "#3178c6", width: "25px", height: "25px" }} />,
-      <TechIcon key="tailwind" Icon={SiTailwindcss} label="Tailwind CSS" style={{ color: "#38b2ac", width: "25px", height: "25px" }} />,
-      <TechIcon key="mongo" Icon={SiMongodb} label="MongoDB" style={{ color: "#4db33d", width: "25px", height: "25px" }} />,
-      <TechIcon key="express" Icon={SiExpress} label="Express.js" style={{ color: "", width: "25px", height: "25px" }} />
-    ]
-  },
-  {
-    title: "Synergy",
-    description:
-      "Business platform dedicated to enhancing and promoting teamwork.",
-    image: synergyImg,
-    liveLink: "https://synergy-solutions.vercel.app",
-    codeLink: "https://github.com/vlas-dev/nextjs-site-UPDATE",
-    techStack: [
-      <TechIcon key="react" Icon={SiReact} label="React" style={{ color: "#61dafb", width: "25px", height: "25px" }} />,
-      <TechIcon key="nextjs" Icon={SiNextdotjs} label="Next.js" style={{ color: "", width: "25px", height: "25px" }} />,
-      <TechIcon key="js" Icon={SiJavascript} label="JavaScript" style={{ color: "#f7df1e", backgroundColor: "black", width: "25px", height: "25px" }} />,
-      <TechIcon key="tailwind" Icon={SiTailwindcss} label="Tailwind CSS" style={{ color: "#38b2ac", width: "25px", height: "25px" }} />
-    ]
-  },
-  {
-    title: "R.P.S.",
-    description:
-      "Classic Rock Paper Scissors game reimagined as a retro fighting game.",
-    image: rpsImg,
-    liveLink: "https://vlas-dev.github.io/RPS-app",
-    codeLink: "https://github.com/vlas-dev/RPS-app",
-    techStack: [
-      <TechIcon key="react" Icon={SiReact} label="React" style={{ color: "#61dafb", width: "25px", height: "25px" }} />,
-      <TechIcon key="js" Icon={SiJavascript} label="JavaScript" style={{ color: "#f7df1e", backgroundColor: "black", width: "25px", height: "25px" }} />,
-      <TechIcon key="tailwind" Icon={SiTailwindcss} label="Tailwind CSS" style={{ color: "#38b2ac", width: "25px", height: "25px" }} />
-    ]
-  },
-  {
-    title: "Weather App",
-    description:
-      "Quick tool to check the weather of any city using the OpenWeatherMap API.",
-    image: weatherImg,
-    liveLink: "https://vlas-dev.github.io/weather-app",
-    codeLink: "https://github.com/vlas-dev/weather-app",
-    techStack: [
-      <TechIcon key="react" Icon={SiReact} label="React" style={{ color: "#61dafb", width: "25px", height: "25px" }} />,
-      <TechIcon key="js" Icon={SiJavascript} label="JavaScript" style={{ color: "#f7df1e", backgroundColor: "black", width: "25px", height: "25px" }} />,
-      <TechIcon key="tailwind" Icon={SiTailwindcss} label="Tailwind CSS" style={{ color: "#38b2ac", width: "25px", height: "25px" }} />,
-      <TechIcon key="api" Icon={AiOutlineApi} label="OpenWeatherMap API" style={{ color: "#F7332C", width: "25px", height: "25px" }} />
-    ]
-  },
-  {
-    title: "Calculator",
-    description:
-      "Simple calculator integrated into a phone interface using CSS.",
-    image: calculatorImg,
-    liveLink: "https://vlas-dev.github.io/calculator-app",
-    codeLink: "https://github.com/vlas-dev/calculator-app",
-    techStack: [
-      <TechIcon key="react" Icon={SiReact} label="React" style={{ color: "#61dafb", width: "25px", height: "25px" }} />,
-      <TechIcon key="js" Icon={SiJavascript} label="JavaScript" style={{ color: "#f7df1e", backgroundColor: "black", width: "25px", height: "25px" }} />,
-      <TechIcon key="tailwind" Icon={SiTailwindcss} label="Tailwind CSS" style={{ color: "#38b2ac", width: "25px", height: "25px" }} />
-    ]
-  },
-];
+        />,
+        <TechIcon
+          key="tailwind"
+          Icon={SiTailwindcss}
+          label="Tailwind CSS"
+          style={{ color: "#38b2ac", width: "25px", height: "25px" }}
+        />,
+      ],
+    },
+    {
+      title: "R.P.S.",
+      description:
+        "Classic Rock Paper Scissors game reimagined as a retro fighting game.",
+      image: rpsImg,
+      liveLink: "https://vlas-dev.github.io/RPS-app",
+      codeLink: "https://github.com/vlas-dev/RPS-app",
+      techStack: [
+        <TechIcon
+          key="react"
+          Icon={SiReact}
+          label="React"
+          style={{ color: "#61dafb", width: "25px", height: "25px" }}
+        />,
+        <TechIcon
+          key="js"
+          Icon={SiJavascript}
+          label="JavaScript"
+          style={{
+            color: "#f7df1e",
+            backgroundColor: "black",
+            width: "25px",
+            height: "25px",
+          }}
+        />,
+        <TechIcon
+          key="tailwind"
+          Icon={SiTailwindcss}
+          label="Tailwind CSS"
+          style={{ color: "#38b2ac", width: "25px", height: "25px" }}
+        />,
+      ],
+    },
+    {
+      title: "Weather App",
+      description:
+        "Quick tool to check the weather of any city using the OpenWeatherMap API.",
+      image: weatherImg,
+      liveLink: "https://vlas-dev.github.io/weather-app",
+      codeLink: "https://github.com/vlas-dev/weather-app",
+      techStack: [
+        <TechIcon
+          key="react"
+          Icon={SiReact}
+          label="React"
+          style={{ color: "#61dafb", width: "25px", height: "25px" }}
+        />,
+        <TechIcon
+          key="js"
+          Icon={SiJavascript}
+          label="JavaScript"
+          style={{
+            color: "#f7df1e",
+            backgroundColor: "black",
+            width: "25px",
+            height: "25px",
+          }}
+        />,
+        <TechIcon
+          key="tailwind"
+          Icon={SiTailwindcss}
+          label="Tailwind CSS"
+          style={{ color: "#38b2ac", width: "25px", height: "25px" }}
+        />,
+        <TechIcon
+          key="api"
+          Icon={AiOutlineApi}
+          label="OpenWeatherMap API"
+          style={{ color: "#F7332C", width: "25px", height: "25px" }}
+        />,
+      ],
+    },
+    {
+      title: "Calculator",
+      description:
+        "Simple calculator integrated into a phone interface using CSS.",
+      image: calculatorImg,
+      liveLink: "https://vlas-dev.github.io/calculator-app",
+      codeLink: "https://github.com/vlas-dev/calculator-app",
+      techStack: [
+        <TechIcon
+          key="react"
+          Icon={SiReact}
+          label="React"
+          style={{ color: "#61dafb", width: "25px", height: "25px" }}
+        />,
+        <TechIcon
+          key="js"
+          Icon={SiJavascript}
+          label="JavaScript"
+          style={{
+            color: "#f7df1e",
+            backgroundColor: "black",
+            width: "25px",
+            height: "25px",
+          }}
+        />,
+        <TechIcon
+          key="tailwind"
+          Icon={SiTailwindcss}
+          label="Tailwind CSS"
+          style={{ color: "#38b2ac", width: "25px", height: "25px" }}
+        />,
+      ],
+    },
+  ];
 
   return (
     <div
       id="projects"
       name="/projects"
-      className="flex pb-20 w-full transition-colors duration-200"
+      className="flex pb-20 w-full transition-colors duration-200 text-pretty"
     >
       <motion.div
         className="max-w-[900px] mx-auto p-4"
@@ -161,23 +294,30 @@ const projectData = [
                   {project.description}
                 </p>
                 <div className="flex flex-col  md:flex-row mb-2 gap-3">
-                 <div className="flex justify-center font-bold">Tech Stack:</div> <div className="flex items-center gap-2">{project.techStack.map(icon => icon)}</div>
+                  <div className="flex justify-center font-bold">
+                    Tech Stack:
+                  </div>{" "}
+                  <div className="flex items-center gap-2">
+                    {project.techStack.map((icon) => icon)}
+                  </div>
                 </div>
                 <div className="flex justify-center md:justify-start gap-2">
                   <a
                     href={project.liveLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-blue-500 hover:bg-blue-600 dark:bg-[#fd204f] dark:hover:bg-[#911232] text-white px-5 py-2 rounded-full transition-colors duration-300"
+                    className="bg-blue-500 hover:bg-blue-600 dark:bg-[#fd204f] dark:hover:bg-[#911232] text-white px-5 py-2 rounded-full transition-colors duration-300 flex items-center justify-center gap-2"
                   >
+                    <FaExternalLinkAlt />
                     Live
                   </a>
                   <a
                     href={project.codeLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-stone-600 hover:bg-stone-900 dark:bg-stone-500 hover:dark:bg-stone-700 text-white px-5 py-2 rounded-full transition-colors duration-300"
+                    className="bg-stone-600 hover:bg-stone-900 dark:bg-stone-500 hover:dark:bg-stone-700 text-white px-5 py-2 rounded-full transition-colors duration-300 flex items-center justify-center gap-2"
                   >
+                    <FaExternalLinkAlt />
                     Code
                   </a>
                 </div>

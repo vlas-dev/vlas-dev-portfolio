@@ -84,7 +84,7 @@ const Navbar = () => {
   }, [activeSection, location.pathname]);
 
   return (
-    <div className="sticky top-0 w-full h-[65px] bg-stone-100 dark:bg-stone-900 nav-index border-b-2 border-stone-200 dark:border-stone-700 transition-colors duration-200 ">
+    <div className="sticky top-0 w-full h-[65px] bg-stone-100 dark:bg-stone-900 nav-index border-b-2 border-stone-200 dark:border-stone-700 ">
       <div className="max-w-[800px] mx-auto flex justify-between items-center">
         <div className="ml-4 mt-2 mb-2 md:ml-2 md:mt-3 hidden lg:block">
           <RouterLink to="/" onClick={() => handleClick("home")}>

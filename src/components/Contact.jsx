@@ -1,10 +1,5 @@
-import React from "react";
-import {
- 
- 
-  FaGithub,
-  FaLinkedin,
-} from "react-icons/fa";
+import React, { useEffect } from "react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 import { toast } from "react-toastify";
 
@@ -12,7 +7,6 @@ import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 
 import { motion } from "framer-motion";
-
 
 const copyEmail = () => {
   navigator.clipboard.writeText("musiccofabian@gmail.com");
@@ -22,37 +16,32 @@ const copyEmail = () => {
   });
 };
 
-
-
- 
-
-
 const Contact = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div
-    id="contact"
+      id="contact"
       name="/contact"
       className="flex justify-center lg:pt-14 pt-5 min-h-screen w-full text-center transition-colors duration-200"
-    
-
     >
-      <motion.div className="w-full max-w-[800px] mx-auto"
-        
+      <motion.div
+        className="w-full max-w-[800px] mx-auto"
         initial={{ opacity: 0, translateX: -3 }}
         animate={{ opacity: 1, translateX: 0 }}
         exit={{ opacity: 0, translateX: 3 }}
-        transition={{duration: 0.3 }} 
+        transition={{ duration: 0.3 }}
         style={{ overflowAnchor: "auto" }}
-        >
+      >
         <div className="pb-5">
-          <p className="text-4xl font-bold inline ">
-            Contact
-          </p>
+          <p className="text-4xl font-bold inline ">Contact</p>
 
           {/* SOCIAL ICONS */}
           <div className="flex justify-center pt-8 gap-5">
             <a
-              className="transition-all duration-300 ease-in-out transform  hover:text-blue-500 hover:dark:text-[#fd204f]"
+              className="transition-colors duration-100 ease-in-out transform  hover:text-blue-500 hover:dark:text-[#fd204f]"
               href="https://www.linkedin.com/in/musicco-dev/"
               target="_blank"
               rel="noopener noreferrer"
@@ -60,7 +49,7 @@ const Contact = () => {
               <FaLinkedin size={40} />
             </a>
             <a
-              className="transition-all duration-300 ease-in-out transform hover:text-blue-500 hover:dark:text-[#fd204f]"
+              className="transition-colors duration-100 ease-in-out transform hover:text-blue-500 hover:dark:text-[#fd204f]"
               href="https://github.com/vlas-dev"
               target="_blank"
               rel="noopener noreferrer"
@@ -69,7 +58,7 @@ const Contact = () => {
             </a>
             <button
               type="button"
-              className="transition-all duration-300 ease-in-out transform cursor-pointer hover:text-blue-500 hover:dark:text-[#fd204f]"
+              className="transition-colors duration-100 ease-in-out transform cursor-pointer hover:text-blue-500 hover:dark:text-[#fd204f]"
               onClick={copyEmail}
             >
               <HiOutlineMail size={40} />
