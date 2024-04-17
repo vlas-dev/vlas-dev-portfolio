@@ -15,7 +15,7 @@ import {
   SiLinux,
   SiPostman,
 } from "react-icons/si";
-import { RiBearSmileLine } from "react-icons/ri";
+import { RiBearSmileFill } from "react-icons/ri";
 import { motion, useAnimation } from "framer-motion";
 
 const SkillCard = ({ icon, label, color, bgColor }) => {
@@ -86,23 +86,22 @@ const About = () => {
         <h3 className="text-2xl font-bold mb-8 text-center max-w-[200px] mx-auto">
           Main Skills
         </h3>
-        <div className="flex flex-wrap justify-center md:grid-cols-3 gap-4 px-10 max-w-[700px]">
+        <div className="flex flex-wrap justify-center gap-4 max-w-[850px]">
+        <SkillCard icon={SiReact} label="React.js" color="#149eca" />
+          <SkillCard
+            icon={SiNextdotjs}
+            label="Next.js"
+            color="#0e0e0e dark:#eeeeee"
+          />
           <SkillCard
             icon={SiJavascript}
             label="JavaScript"
             color="#f7df1e"
             bgColor="black"
           />
-          <SkillCard icon={SiReact} label="React.js" color="#149eca" />
-          <SkillCard
-            icon={SiNextdotjs}
-            label="Next.js"
-            color="#0e0e0e dark:#eeeeee"
-          />
           <SkillCard icon={SiTypescript} label="TypeScript" color="#2f74c0" />
-          <SkillCard icon={RiBearSmileLine} label="Zustand" color="#2759c6" />
+          <SkillCard icon={RiBearSmileFill} label="Zustand" color="#2759c6" />
           <SkillCard icon={SiTailwindcss} label="Tailwind" color="#07b6d5" />
-          <SkillCard icon={SiGit} label="Git" color="#f34f29" />
           <SkillCard icon={SiMongodb} label="MongoDB" color="#47a248" />
           <SkillCard icon={SiNodedotjs} label="Node.js" color="#83cd29" />
         </div>
@@ -112,13 +111,9 @@ const About = () => {
         <h3 className="text-lg font-bold mb-5 text-center">
           Complementary Skills
         </h3>
-        <div className="flex flex-wrap justify-center md:grid-cols-3 gap-4 px-10 max-w-[700px]">
+        <div className="flex flex-wrap justify-center md:grid-cols-3 gap-4 max-w-[600px]">
           <SkillCard icon={SiPostman} label="Postman" color="#FF713E" />
-          <SkillCard
-            icon={SiGithub}
-            label="GitHub"
-            color="#181717 dark:#dddddd"
-          />
+          <SkillCard icon={SiGit} label="Git" color="#f34f29" />
           <SkillCard
             icon={SiLinux}
             label="Linux"
