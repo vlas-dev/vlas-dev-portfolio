@@ -67,7 +67,7 @@ const SkillCard = ({ icon, label, color, bgColor, overlayText }) => {
   return (
     <div
       onClick={handleCardClick}
-      className="flex flex-col items-center p-3 bg-white dark:bg-stone-900 shadow-lg hover:shadow-stone-400 dark:hover:shadow-stone-600 transition-transform-all duration-300 rounded-lg border-2 border-stone-300 dark:border-stone-400 w-32 md:w-36 text-xs md:text-sm cursor-pointer"
+      className="flex flex-col items-center p-3 bg-white dark:bg-stone-900 shadow-lg hover:shadow-stone-400 dark:hover:shadow-stone-600 transition-transform-all duration-100 rounded-lg border-2 border-stone-300 dark:border-stone-400 w-32 md:w-36 text-xs md:text-sm cursor-pointer"
     >
       {content}
       <p className="mt-1 font-semibold">{label}</p>
@@ -84,7 +84,7 @@ const About = () => {
       transition={{ duration: 0.3 }}
       id="about"
       name="/about"
-      className="max-w-[900px] mx-auto flex flex-col items-center min-h-screen transition-colors duration-200 pt-5 pb-32"
+      className="max-w-[900px] mx-auto flex flex-col items-center min-h-screen pt-5 pb-32"
     >
       <div className="w-full max-w-[700px] text-center">
         <h2 className="text-4xl font-bold mb-4">About Me</h2>
